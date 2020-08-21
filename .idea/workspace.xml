@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f37196f5-d7d3-4272-96c1-0e6f6ffd9042" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/screens/DetailPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/DetailPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/FrostedAppBar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/FrostedAppBar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1eEUkcItrnJUN12KxXdBCfwIWhr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/widgets" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\lib\screens" />
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\assets\images" />
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\juice_images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\lib\widgets" />
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\android\app\src\main\res\drawable" />
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\assets" />
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\assets\images" />
+      <recent name="C:\Users\othni\AndroidStudioProjects\kinshasa\assets\images\smoothie_images" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f37196f5-d7d3-4272-96c1-0e6f6ffd9042" name="Default Changelist" comment="" />
+      <created>1593886389809</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593886389809</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Removed the pull down to refresh feature on the favorites screen&#10;The new solution uses Provider to automatically refresh the contents of the screen when the user adds an item to his favorites">
+      <created>1596140808221</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596140808221</updated>
+    </task>
+    <task id="LOCAL-00002" summary="One file added: FavoritesProvider">
+      <created>1596140955238</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596140955238</updated>
+    </task>
+    <task id="LOCAL-00003" summary="One file added: FavoritesProvider&#10;Now the user doesn't have to pull down to refresh">
+      <created>1597340389711</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597340389711</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removed the pull down to refresh feature on the favorites screen&#10;The new solution uses Provider to automatically refresh the contents of the screen" />
+    <MESSAGE value="Removed the pull down to refresh feature on the favorites screen&#10;The new solution uses Provider to automatically refresh the contents of the screen when the user adds an item to his favorites" />
+    <MESSAGE value="One file added: FavoritesProvider" />
+    <MESSAGE value="One file added: FavoritesProvider&#10;Now the user doesn't have to pull down to refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="One file added: FavoritesProvider&#10;Now the user doesn't have to pull down to refresh" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="209" y="91" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1597340088937">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="209" y="91" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1597340088937" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594725528015">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1594725528015" />
+    <state x="396" y="129" key="AndroidProcessChooserDialog" timestamp="1594145834171">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="396" y="129" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1594145834171" />
+    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1597340388935">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597340388935" />
+    <state x="0" y="54" key="DiffContextDialog" timestamp="1595254637943">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="54" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1595254637943" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1595886344268">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1595886344268" />
+    <state x="385" y="257" key="Github.ShareDialog" timestamp="1595200321992">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="385" y="257" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1595200321992" />
+    <state x="240" y="69" key="Github.UntrackedFilesDialog" timestamp="1595200328314">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="240" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595200328314" />
+    <state width="974" height="252" key="GridCell.Tab.0.bottom" timestamp="1597345673943">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="974" height="252" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597345673943" />
+    <state width="974" height="252" key="GridCell.Tab.0.center" timestamp="1597345673943">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="974" height="252" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597345673943" />
+    <state width="974" height="252" key="GridCell.Tab.0.left" timestamp="1597345673942">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="974" height="252" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597345673942" />
+    <state width="974" height="252" key="GridCell.Tab.0.right" timestamp="1597345673943">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="974" height="252" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597345673943" />
+    <state x="311" y="74" key="RollbackChangesDialog" timestamp="1595617152072">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="311" y="74" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595617152072" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1595610627049">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1595610627049" />
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596049750663">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1596049750663" />
+    <state x="352" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595258244503">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="352" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1595258244503" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1593906928013">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1593906928013" />
+    <state x="12" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1595864114961">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="12" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1595864114961" />
+  </component>
+</project>
