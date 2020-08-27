@@ -13,9 +13,6 @@ import 'package:intl/intl.dart';
 import 'package:kinshasa/tab_bar/juice_tab.dart';
 import 'package:kinshasa/tab_bar/shake_tab.dart';
 import 'package:kinshasa/tab_bar/smoothie_tab.dart';
-import 'package:kinshasa/widgets/FavoritesProvider.dart';
-import 'package:kinshasa/widgets/SharedPreferencesHelper.dart';
-import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -24,14 +21,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final String _today = "Today";
-
-  FavoritesBloc _favoritesBloc;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _favoritesBloc = Provider.of<FavoritesBloc>(context);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,18 +53,12 @@ class _HomeState extends State<Home> {
                         SizedBox(
                           height: 1.0,
                         ),
-                        FutureBuilder(
-                          future: SharedPreferencesHelper.getConfirmDelete(),
-                          builder: (context, snapshot) {
-                            _favoritesBloc.setDeletePreference(snapshot.data);
-                            return Text(
-                              '$formattedDate',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 13.0,
-                              ),
-                            );
-                          },
+                        Text(
+                          '$formattedDate',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 13.0,
+                          ),
                         ),
                       ],
                     ),

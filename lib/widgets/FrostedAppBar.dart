@@ -33,34 +33,31 @@ class _FrostedAppBarState extends State<FrostedAppBar> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return Positioned(
-      top: 0,
-      child: ClipRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(
-              sigmaX: widget.blurStrengthX ?? 12,
-              sigmaY: widget.blurStrengthY ?? 12),
-          child: Container(
-            color: widget.color,
-            alignment: Alignment.center,
-            width: screenSize.width,
-            height: widget.height ?? kToolbarHeight,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(left: 4.0, top: 0.0),
-                  child: Container(
-                    color: Colors.transparent,
-                    child: widget.leading,
-                  ),
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(
+            sigmaX: widget.blurStrengthX ?? 12,
+            sigmaY: widget.blurStrengthY ?? 12),
+        child: Container(
+          color: widget.color,
+          alignment: Alignment.center,
+          width: screenSize.width,
+          height: widget.height ?? kToolbarHeight,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 4.0, top: 0.0),
+                child: Container(
+                  color: Colors.transparent,
+                  child: widget.leading,
                 ),
-                Expanded(
-                    child: Align(
-                        alignment: Alignment.center, child: widget.title)),
-                Row(children: widget.actions ?? [])
-              ],
-            ),
+              ),
+              Expanded(
+                  child:
+                      Align(alignment: Alignment.center, child: widget.title)),
+              Row(children: widget.actions ?? [])
+            ],
           ),
         ),
       ),

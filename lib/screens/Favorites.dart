@@ -19,6 +19,7 @@ import 'package:kinshasa/widgets/Constants.dart';
 import 'package:kinshasa/widgets/DBHelper1.dart';
 import 'package:kinshasa/widgets/DrinkModel.dart';
 import 'package:kinshasa/widgets/FavoritesProvider.dart';
+import 'package:kinshasa/widgets/SharedPreferencesHelper.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:provider/provider.dart';
 
@@ -45,6 +46,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           _favoritesBloc.addDrink(drink);
         });
       });
+    });
+
+    SharedPreferencesHelper.getConfirmDelete().then((value) {
+      _favoritesBloc.setDeletePreference(value);
     });
   }
 

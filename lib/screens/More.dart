@@ -134,19 +134,20 @@ class _MorePageState extends State<MorePage> {
           FutureBuilder(
             future: SharedPreferencesHelper.getConfirmDelete(),
             builder: (context, snapshot) {
-              return ListTile(
-                title: Text('Confirm before deleting'),
-                leading: Icon(Icons.warning),
-                trailing: Checkbox(
-                  value: snapshot.data,
-                  onChanged: (value) {
-                    SharedPreferencesHelper.setConfirmDelete(value);
-                    _favoritesBloc.setDeletePreference(value);
-                    setState(() {});
-                  },
-                ),
-                onTap: () {},
-              );
+              if (snapshot.connectionState == ConnectionState.done) {
+                return ListTile(
+                  title: Text('Confirm before deleting'),
+                  leading: Icon(CupertinoIcons.delete),
+                  trailing: Switch(
+                    value: snapshot.data,
+                    onChanged: (value) {
+                      _favoritesBloc.setDeletePreference(value);
+                      SharedPreferencesHelper.setConfirmDelete(value);
+                    },
+                  ),
+                );
+              }
+              return ListTile();
             },
           ),
           Padding(

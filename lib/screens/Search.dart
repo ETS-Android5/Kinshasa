@@ -35,8 +35,8 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   void didChangeDependencies() {
-    inheritedWidget = MyInheritedWidget.of(context);
     super.didChangeDependencies();
+    inheritedWidget = MyInheritedWidget.of(context);
     var lst = [
       ...inheritedWidget.juiceList,
       ...inheritedWidget.smoothieList,
@@ -77,7 +77,9 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   // Function to return a randomly selected item from the drink list
-  randomListItem() => items[random.nextInt(items.length)];
+  int randomListItem() {
+    return random.nextInt(items.length);
+  }
 
   // Method to construct the three suggested items
   Widget buildSuggestedItems() {
@@ -98,7 +100,7 @@ class _SearchScreenState extends State<SearchScreen> {
   // detail page for each of the three suggested list items
   Widget buildListTile() {
     TextStyle style = TextStyle(color: Colors.red[400]);
-    var item = randomListItem();
+    var item = items[randomListItem()];
     return ListTile(
         title: Text(
           '${item.drinkName}',
