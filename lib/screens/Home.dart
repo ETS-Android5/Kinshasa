@@ -1,11 +1,6 @@
 /* * This file/screen is what provides the structure for the three tabs (juice,
  * smoothie, and shake). It also displays the date in the top of the screen tog-
- * ether with the text - Today. 
- * The date is wrapped around FutureBuilder because this widget(Home) is called
- * when the app launches and this means that the SharedPreferences instance is 
- * available. So we can get our data from the preference without any complications
- * What the preference stores is a boolean that checks whether the user wants to
- * confirm before deleting an item on the Favorites screen.
+ * ether with the text - Today.
  */
 
 import 'package:flutter/material.dart';
