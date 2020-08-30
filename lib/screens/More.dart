@@ -87,9 +87,10 @@ class _MorePageState extends State<MorePage> {
             onTap: () {
               showAboutDialog(
                 context: context,
-                applicationName: 'Succo Drink App',
+                applicationName: 'Fruit Zilla',
                 applicationVersion: '1.0',
-                applicationLegalese: 'This is a recipe app',
+                applicationLegalese:
+                    'A drink (juice, smoothie, shake) recipe app',
               );
             },
           ),
