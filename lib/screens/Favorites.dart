@@ -215,6 +215,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   Widget buildListView(List<Drink> data) {
     return data.length > 0
         ? ListView.builder(
+            physics: BouncingScrollPhysics(),
             itemCount: data.length,
             itemBuilder: (context, index) {
               return Column(
