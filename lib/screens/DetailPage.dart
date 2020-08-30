@@ -91,6 +91,7 @@ class _DetailPageState extends State<DetailPage> {
           });
         },
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: <Widget>[
             // Image and name of drink in the top of detail page
             Align(
