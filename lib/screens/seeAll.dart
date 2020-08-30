@@ -75,493 +75,518 @@ class _AllState extends State<All> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: _key,
         body: Stack(
-      children: <Widget>[
-        // List view of all juice, smoothie, or shake
-        Padding(
-          padding: const EdgeInsets.only(top: 40.0),
-          // Scroll handle
-          child: DraggableScrollbar.semicircle(
-            controller: _scrollController,
-            child: ListView.builder(
-              controller: _scrollController,
-              itemCount: widget.set1.length,
-              itemBuilder: (context, index) {
-                return Row(
-                  children: <Widget>[
-                    // stack list on the left
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 30.0, right: 10.0),
-                        child: Bounce(
-                          duration: Duration(milliseconds: 100),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                BouncyPageRoute(
-                                    widget: DetailPage(
-                                  title: widget.set1[index].drinkName,
-                                  imageLink: widget.set1[index].imageLink,
-                                  nutrients: widget.set1[index].nutrients,
-                                  procedure: widget.set1[index].procedure,
-                                  ingredients: widget.set1[index].ingredients,
-                                )));
-                          },
-                          child: GestureDetector(
-                            onLongPress: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(20),
-                                          )),
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.1,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 15.0, horizontal: 15.0),
-                                          child: GestureDetector(
-                                            onTap: () async {
-                                              Navigator.pop(context);
-                                              await helper
-                                                  .insert(widget.set1[index])
-                                                  .then((value) {
-                                                showToast(
-                                                  'Added to favorites',
-                                                  icon: Icon(
-                                                    Icons.check,
-                                                    color: Colors.greenAccent,
-                                                  ),
-                                                );
-                                                _favoritesBloc.addDrink(
-                                                    widget.set1[index]);
-                                              });
-                                            },
-                                            child: ListTile(
-                                              title: Text(
-                                                "Add to favorites",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 17.0),
-                                              ),
-                                              leading: Icon(
-                                                Icons.add,
-                                                color: Colors.red,
-                                                size: 27.0,
-                                              ),
-                                            ),
-                                          )),
-                                    );
-                                  });
-                            },
-                            child: Stack(
-                              children: <Widget>[
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      height: 30.0,
-                                    ),
-                                    Flexible(
-                                      fit: FlexFit.loose,
-                                      child: Container(
-                                          height: 200.0,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              2,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(20.0)),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey[300],
-                                                blurRadius:
-                                                    20.0, // has the effect of softening the shadow
-                                                offset: Offset(
-                                                  10.0, // horizontal, move right 10
-                                                  10.0, // vertical, move down 10
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 65.0,
-                                                left: 10.0,
-                                                right: 10.0),
-                                            child: Column(
-                                              children: <Widget>[
-                                                Flexible(
-                                                  child: Material(
-                                                      color: Colors.transparent,
-                                                      child: Text(
-                                                        '${widget.set1[index].drinkName}',
-                                                        style: TextStyle(
-                                                            fontSize: 16.0,
-                                                            color:
-                                                                Colors.blueGrey,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      )),
-                                                ),
-                                                SizedBox(height: 10.0),
-                                                Container(
-                                                  height: 80.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                              Radius.circular(
-                                                                  7.0))),
-                                                  child: Column(
-                                                    children: <Widget>[
-                                                      SizedBox(height: 5.0),
-                                                      Flexible(
-                                                          child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Text(
-                                                                'cal ${widget.set1[index].calories}',
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  color: Colors
-                                                                      .blueGrey,
-                                                                ),
-                                                              ))),
-                                                      SizedBox(height: 5.0),
-                                                      Flexible(
-                                                          child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Text(
-                                                                'carbs ${widget.set1[index].carbohydrates}g',
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  color: Colors
-                                                                      .blueGrey,
-                                                                ),
-                                                              ))),
-                                                      SizedBox(height: 5.0),
-                                                      Flexible(
-                                                          child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Text(
-                                                                widget.title ==
-                                                                        'shake'
-                                                                    ? 'protein ${widget.set1[index].proteins}g'
-                                                                    : 'sodium ${widget.set1[index].sodium}mg',
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  color: Colors
-                                                                      .blueGrey,
-                                                                ),
-                                                              ))),
-                                                      SizedBox(height: 5.0),
-                                                    ],
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          )),
-                                    ),
-                                  ],
-                                ),
-
-                                // image
-                                Align(
-                                  alignment: Alignment.topCenter,
-                                  child: ClipOval(
-                                    child: Container(
-                                      height: 70.0,
-                                      width: 70.0,
-                                      color: Colors.grey,
-                                      child: Image.asset(
-                                        widget.set1[index].imageLink,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // stack list on the right
-                    Expanded(
-                        child: Column(
+          children: <Widget>[
+            // List view of all juice, smoothie, or shake
+            Padding(
+              padding: const EdgeInsets.only(top: 70.0),
+              // Scroll handle
+              child: DraggableScrollbar.semicircle(
+                controller: _scrollController,
+                child: ListView.builder(
+                  padding: const EdgeInsets.only(bottom: 30.0),
+                  physics: BouncingScrollPhysics(),
+                  controller: _scrollController,
+                  itemCount: widget.set1.length,
+                  itemBuilder: (context, index) {
+                    return Row(
                       children: <Widget>[
-                        SizedBox(height: 100.0),
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(left: 10.0, right: 30.0),
-                          child: Bounce(
-                            duration: Duration(milliseconds: 100),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  BouncyPageRoute(
-                                      widget: DetailPage(
-                                    title: widget.set2[index].drinkName,
-                                    imageLink: widget.set2[index].imageLink,
-                                    nutrients: widget.set2[index].nutrients,
-                                    procedure: widget.set2[index].procedure,
-                                    ingredients: widget.set2[index].ingredients,
-                                  )));
-                            },
-                            child: GestureDetector(
-                              onLongPress: () {
-                                showModalBottomSheet(
-                                    context: context,
-                                    builder: (context) {
-                                      return Container(
-                                        decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.vertical(
-                                              top: Radius.circular(20),
-                                            )),
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.1,
-                                        child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 15.0,
-                                                horizontal: 15.0),
-                                            child: GestureDetector(
-                                              onTap: () async {
-                                                Navigator.pop(context);
-                                                await helper
-                                                    .insert(widget.set2[index])
-                                                    .then((value) {
-                                                  showToast(
-                                                    'Added to favorites',
-                                                    icon: Icon(
-                                                      Icons.check,
-                                                      color: Colors.greenAccent,
-                                                    ),
-                                                  );
-                                                  _favoritesBloc.addDrink(
-                                                      widget.set2[index]);
-                                                });
-                                              },
-                                              child: ListTile(
-                                                title: Text(
-                                                  "Add to favorites",
-                                                  style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 17.0),
-                                                ),
-                                                leading: Icon(
-                                                  Icons.add,
-                                                  color: Colors.red,
-                                                  size: 27.0,
-                                                ),
-                                              ),
-                                            )),
-                                      );
-                                    });
+                        // stack list on the left
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 30.0, right: 10.0),
+                            child: Bounce(
+                              duration: Duration(milliseconds: 100),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    BouncyPageRoute(
+                                        widget: DetailPage(
+                                      title: widget.set1[index].drinkName,
+                                      imageLink: widget.set1[index].imageLink,
+                                      nutrients: widget.set1[index].nutrients,
+                                      procedure: widget.set1[index].procedure,
+                                      ingredients:
+                                          widget.set1[index].ingredients,
+                                    )));
                               },
-                              child: Stack(
-                                children: <Widget>[
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      SizedBox(height: 30.0),
-                                      Flexible(
-                                        fit: FlexFit.loose,
-                                        child: Container(
-                                            height: 200.0,
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                2,
-                                            decoration: BoxDecoration(
+                              child: GestureDetector(
+                                onLongPress: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Container(
+                                          decoration: BoxDecoration(
                                               color: Colors.white,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(20.0)),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.grey[300],
-                                                  blurRadius:
-                                                      20.0, // has the effect of softening the shadow
-                                                  offset: Offset(
-                                                    10.0, // horizontal, move right 10
-                                                    10.0, // vertical, move down 10
-                                                  ),
-                                                ) //this is the widget that does the shadow effect around the stacks
-                                              ],
-                                            ),
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 65.0,
-                                                  left: 10.0,
-                                                  right:
-                                                      10.0), //this gives the space around the name and nutritional value box
-                                              child: Column(
-                                                children: <Widget>[
-                                                  Flexible(
-                                                    child: Material(
+                                              borderRadius:
+                                                  BorderRadius.vertical(
+                                                top: Radius.circular(20),
+                                              )),
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.1,
+                                          child: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  vertical: 15.0,
+                                                  horizontal: 15.0),
+                                              child: GestureDetector(
+                                                onTap: () async {
+                                                  Navigator.pop(context);
+                                                  await helper
+                                                      .insert(
+                                                          widget.set1[index])
+                                                      .then((value) {
+                                                    showToast(
+                                                      'Added to favorites',
+                                                      icon: Icon(
+                                                        Icons.check,
                                                         color:
-                                                            Colors.transparent,
-                                                        child: Text(
-                                                          '${widget.set2[index].drinkName}',
-                                                          style: TextStyle(
-                                                              fontSize: 16.0,
-                                                              color: Colors
-                                                                  .blueGrey,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold),
-                                                        )),
-                                                  ), //this widget contains the name of the juice
-                                                  SizedBox(
-                                                      height:
-                                                          10.0), //this widget spaces out the juice name from the nutritional value box
-                                                  Container(
-                                                    height: 80.0,
-                                                    child: Column(
-                                                      children: <Widget>[
-                                                        SizedBox(height: 5.0),
-                                                        Flexible(
-                                                            child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                child: Text(
-                                                                  'cal ${widget.set2[index].calories}',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    color: Colors
-                                                                        .blueGrey,
-                                                                  ),
-                                                                ))),
-                                                        SizedBox(height: 5.0),
-                                                        Flexible(
-                                                            child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                child: Text(
-                                                                  'carbs ${widget.set2[index].carbohydrates}g',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    color: Colors
-                                                                        .blueGrey,
-                                                                  ),
-                                                                ))),
-                                                        SizedBox(height: 5.0),
-                                                        Flexible(
-                                                            child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                child: Text(
-                                                                  widget.title ==
-                                                                          'shake'
-                                                                      ? 'protein ${widget.set2[index].proteins}g'
-                                                                      : 'sodium ${widget.set2[index].sodium}mg',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    color: Colors
-                                                                        .blueGrey,
-                                                                  ),
-                                                                ))),
-                                                        SizedBox(height: 5.0),
-                                                      ],
+                                                            Colors.greenAccent,
+                                                      ),
+                                                    );
+                                                    _favoritesBloc.addDrink(
+                                                        widget.set1[index]);
+                                                  });
+                                                },
+                                                child: ListTile(
+                                                  title: Text(
+                                                    "Add to favorites",
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 17.0),
+                                                  ),
+                                                  leading: Icon(
+                                                    Icons.add,
+                                                    color: Colors.red,
+                                                    size: 27.0,
+                                                  ),
+                                                ),
+                                              )),
+                                        );
+                                      });
+                                },
+                                child: Stack(
+                                  children: <Widget>[
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        SizedBox(
+                                          height: 30.0,
+                                        ),
+                                        Flexible(
+                                          fit: FlexFit.loose,
+                                          child: Container(
+                                              height: 200.0,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width /
+                                                  2,
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(20.0)),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    color: Colors.grey[300],
+                                                    blurRadius:
+                                                        20.0, // has the effect of softening the shadow
+                                                    offset: Offset(
+                                                      10.0, // horizontal, move right 10
+                                                      10.0, // vertical, move down 10
                                                     ),
-                                                  ) //this is the nutritional value box visible in the stack
+                                                  )
                                                 ],
                                               ),
-                                            )),
-                                      ), //this container is the white container on which the juice name lies
-                                    ],
-                                  ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 65.0,
+                                                    left: 10.0,
+                                                    right: 10.0),
+                                                child: Column(
+                                                  children: <Widget>[
+                                                    Flexible(
+                                                      child: Material(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child: Text(
+                                                            '${widget.set1[index].drinkName}',
+                                                            style: TextStyle(
+                                                                fontSize: 16.0,
+                                                                color: Colors
+                                                                    .blueGrey,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          )),
+                                                    ),
+                                                    SizedBox(height: 10.0),
+                                                    Container(
+                                                      height: 80.0,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          7.0))),
+                                                      child: Column(
+                                                        children: <Widget>[
+                                                          SizedBox(height: 5.0),
+                                                          Flexible(
+                                                              child: Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  child: Text(
+                                                                    'cal ${widget.set1[index].calories}',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      color: Colors
+                                                                          .blueGrey,
+                                                                    ),
+                                                                  ))),
+                                                          SizedBox(height: 5.0),
+                                                          Flexible(
+                                                              child: Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  child: Text(
+                                                                    'carbs ${widget.set1[index].carbohydrates}g',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      color: Colors
+                                                                          .blueGrey,
+                                                                    ),
+                                                                  ))),
+                                                          SizedBox(height: 5.0),
+                                                          Flexible(
+                                                              child: Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  child: Text(
+                                                                    widget.title ==
+                                                                            'shake'
+                                                                        ? 'protein ${widget.set1[index].proteins}g'
+                                                                        : 'sodium ${widget.set1[index].sodium}mg',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      color: Colors
+                                                                          .blueGrey,
+                                                                    ),
+                                                                  ))),
+                                                          SizedBox(height: 5.0),
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              )),
+                                        ),
+                                      ],
+                                    ),
 
-                                  // image
-                                  Align(
-                                    alignment: Alignment.topCenter,
-                                    child: ClipOval(
-                                      child: Container(
-                                        height: 70.0,
-                                        width: 70.0,
-                                        color: Colors.grey,
-                                        child: Image.asset(
-                                          widget.set2[index].imageLink,
-                                          fit: BoxFit.cover,
+                                    // image
+                                    Align(
+                                      alignment: Alignment.topCenter,
+                                      child: ClipOval(
+                                        child: Container(
+                                          height: 70.0,
+                                          width: 70.0,
+                                          color: Colors.grey,
+                                          child: Image.asset(
+                                            widget.set1[index].imageLink,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ), //padding for the spacing of every two fruit stack item
-                      ],
-                    )), // this column is specific and important to achieve the visual effect of every two fruit stack items
-                  ],
-                );
-              },
-            ),
-          ),
-        ),
+                        ),
 
-        // Frosted app bar
-        Padding(
-          padding: const EdgeInsets.only(top: 26.0),
-          child: FrostedAppBar(
-            title: Text(
-              '${widget.title}',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
-                  fontFamily: 'Product Sans'),
-            ),
-            leading: IconButton(
-              iconSize: 30.0,
-              icon: Icon(CupertinoIcons.back),
-              color: Colors.red[400],
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-            actions: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    '${widget.providerCount}',
-                    style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                        // stack list on the right
+                        Expanded(
+                            child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 100.0),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 10.0, right: 30.0),
+                              child: Bounce(
+                                duration: Duration(milliseconds: 100),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      BouncyPageRoute(
+                                          widget: DetailPage(
+                                        title: widget.set2[index].drinkName,
+                                        imageLink: widget.set2[index].imageLink,
+                                        nutrients: widget.set2[index].nutrients,
+                                        procedure: widget.set2[index].procedure,
+                                        ingredients:
+                                            widget.set2[index].ingredients,
+                                      )));
+                                },
+                                child: GestureDetector(
+                                  onLongPress: () {
+                                    showModalBottomSheet(
+                                        context: context,
+                                        builder: (context) {
+                                          return Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.vertical(
+                                                  top: Radius.circular(20),
+                                                )),
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.1,
+                                            child: Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 15.0,
+                                                    horizontal: 15.0),
+                                                child: GestureDetector(
+                                                  onTap: () async {
+                                                    Navigator.pop(context);
+                                                    await helper
+                                                        .insert(
+                                                            widget.set2[index])
+                                                        .then((value) {
+                                                      showToast(
+                                                        'Added to favorites',
+                                                        icon: Icon(
+                                                          Icons.check,
+                                                          color: Colors
+                                                              .greenAccent,
+                                                        ),
+                                                      );
+                                                      _favoritesBloc.addDrink(
+                                                          widget.set2[index]);
+                                                    });
+                                                  },
+                                                  child: ListTile(
+                                                    title: Text(
+                                                      "Add to favorites",
+                                                      style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 17.0),
+                                                    ),
+                                                    leading: Icon(
+                                                      Icons.add,
+                                                      color: Colors.red,
+                                                      size: 27.0,
+                                                    ),
+                                                  ),
+                                                )),
+                                          );
+                                        });
+                                  },
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          SizedBox(height: 30.0),
+                                          Flexible(
+                                            fit: FlexFit.loose,
+                                            child: Container(
+                                                height: 200.0,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    2,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              20.0)),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.grey[300],
+                                                      blurRadius:
+                                                          20.0, // has the effect of softening the shadow
+                                                      offset: Offset(
+                                                        10.0, // horizontal, move right 10
+                                                        10.0, // vertical, move down 10
+                                                      ),
+                                                    ) //this is the widget that does the shadow effect around the stacks
+                                                  ],
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                          .only(
+                                                      top: 65.0,
+                                                      left: 10.0,
+                                                      right:
+                                                          10.0), //this gives the space around the name and nutritional value box
+                                                  child: Column(
+                                                    children: <Widget>[
+                                                      Flexible(
+                                                        child: Material(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child: Text(
+                                                              '${widget.set2[index].drinkName}',
+                                                              style: TextStyle(
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  color: Colors
+                                                                      .blueGrey,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            )),
+                                                      ), //this widget contains the name of the juice
+                                                      SizedBox(
+                                                          height:
+                                                              10.0), //this widget spaces out the juice name from the nutritional value box
+                                                      Container(
+                                                        height: 80.0,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            SizedBox(
+                                                                height: 5.0),
+                                                            Flexible(
+                                                                child: Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child: Text(
+                                                                      'cal ${widget.set2[index].calories}',
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        color: Colors
+                                                                            .blueGrey,
+                                                                      ),
+                                                                    ))),
+                                                            SizedBox(
+                                                                height: 5.0),
+                                                            Flexible(
+                                                                child: Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child: Text(
+                                                                      'carbs ${widget.set2[index].carbohydrates}g',
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        color: Colors
+                                                                            .blueGrey,
+                                                                      ),
+                                                                    ))),
+                                                            SizedBox(
+                                                                height: 5.0),
+                                                            Flexible(
+                                                                child: Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child: Text(
+                                                                      widget.title ==
+                                                                              'shake'
+                                                                          ? 'protein ${widget.set2[index].proteins}g'
+                                                                          : 'sodium ${widget.set2[index].sodium}mg',
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        color: Colors
+                                                                            .blueGrey,
+                                                                      ),
+                                                                    ))),
+                                                            SizedBox(
+                                                                height: 5.0),
+                                                          ],
+                                                        ),
+                                                      ) //this is the nutritional value box visible in the stack
+                                                    ],
+                                                  ),
+                                                )),
+                                          ), //this container is the white container on which the juice name lies
+                                        ],
+                                      ),
+
+                                      // image
+                                      Align(
+                                        alignment: Alignment.topCenter,
+                                        child: ClipOval(
+                                          child: Container(
+                                            height: 70.0,
+                                            width: 70.0,
+                                            color: Colors.grey,
+                                            child: Image.asset(
+                                              widget.set2[index].imageLink,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ), //padding for the spacing of every two fruit stack item
+                          ],
+                        )), // this column is specific and important to achieve the visual effect of every two fruit stack items
+                      ],
+                    );
+                  },
                 ),
-              )
-            ],
-          ),
-        ),
-      ],
-    ));
+              ),
+            ),
+
+            // Frosted app bar
+            Padding(
+              padding: const EdgeInsets.only(top: 26.0),
+              child: FrostedAppBar(
+                title: Text(
+                  '${widget.title}',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                      fontFamily: 'Product Sans'),
+                ),
+                leading: IconButton(
+                  iconSize: 30.0,
+                  icon: Icon(CupertinoIcons.back),
+                  color: Colors.red[400],
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                actions: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        '${widget.providerCount}',
+                        style: TextStyle(
+                          color: Colors.blueGrey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ));
   }
 }
