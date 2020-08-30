@@ -46,19 +46,19 @@ class _StartState extends State<Start> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(LineAwesomeIcons.home),
-            title: Text('Home'),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text('Search'),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.heart_solid),
-            title: Text('Favorites'),
+            label: 'Favorites',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu),
-            title: Text('More'),
+            label: 'More',
           ),
         ],
       ),
