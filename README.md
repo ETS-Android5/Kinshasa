@@ -3,8 +3,7 @@
 A drink recipe app. This is a simple recipe app that provides some cool recipes for preparing juices, smoothies, and shakes in a very friendly and cool user interface. It tells a user the ingredients needed to prepare a particular drink, the steps to follow, and some useful nutritional values.
 
 ## Screenshots
-<img width="304" alt="Screenshot 2022-01-01 at 17 17 21" src="https://user-images.githubusercontent.com/53237532/147856202-8adf6f98-3603-4d97-b4f0-997a7827fb0b.png">   <img width="309" alt="Screenshot 2022-01-01 at 17 18 19" src="https://user-images.githubusercontent.com/53237532/147856196-e55e8ed6-59cb-426f-b50a-5c838502a46b.png">   <img width="311" alt="Screenshot 2022-01-01 at 17 15 25" src="https://user-images.githubusercontent.com/53237532/147856204-2752c69a-5bca-4d45-99b0-7027a522307f.png">
-
+![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 31 02](https://user-images.githubusercontent.com/53237532/147856461-70b74672-1ca2-40c5-987f-0e6aad9ef651.png)    ![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 28 24](https://user-images.githubusercontent.com/53237532/147856466-e909302e-be55-41cc-b88a-77713a8684fb.png)    ![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 27 48](https://user-images.githubusercontent.com/53237532/147856468-81320439-4dd9-4544-9e47-31eb3248a6c0.png)    ![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 27 39](https://user-images.githubusercontent.com/53237532/147856471-c63aa446-6ca0-415c-8291-f532f040a6b2.png)
 
 ## Getting Started
 
