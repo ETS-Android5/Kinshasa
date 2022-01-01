@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		JYySwlciggvSkDjiPZXXc8jzs1k=
+		edFY+38+BE5aWEXqMpoANEzlA10=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		2dHfvwZV0nwPpcPbG9FrCAe1H/c=
+		DwvSY0ZI3HqPKvgD7yFEOXFfpOo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		6IJpP8ZJSZdTh/KaR1qUULatsYs=
+		dmYa2uAQ0rjbVFlDslgxWZmnc5Y=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/DRINKS.db</key>
 		<data>
@@ -446,7 +446,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Cdm9kmY/HOOII5j54KI0ilSvT7M=
+		JoVv0Ss6t2khD8S/pDaW1QtPaws=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -666,7 +666,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HzQGo6kv374luW1w/3g/s0oEwg8=
+		3F1sBUFf0bpnqUH9MmXWMRNVuRs=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -965,11 +965,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JYySwlciggvSkDjiPZXXc8jzs1k=
+			edFY+38+BE5aWEXqMpoANEzlA10=
 			</data>
 			<key>hash2</key>
 			<data>
-			E0v6TxOmWSo7OPPOvARUkJA+RRMqZqlLMexjDgK5oZc=
+			YBYM3ftP6epuGBuuv4icZyZPOC1keGcEn+J1Q9AhWqA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -987,11 +987,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2dHfvwZV0nwPpcPbG9FrCAe1H/c=
+			DwvSY0ZI3HqPKvgD7yFEOXFfpOo=
 			</data>
 			<key>hash2</key>
 			<data>
-			n0+mNvk7RLAg8f2iZ/cIoJYfpg5KK/LT7Nq6N7B0K1o=
+			wze0yKa0XGWzWTZCfJDe4CvljZ/23i75u7ZmUMjvNjA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -1020,11 +1020,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6IJpP8ZJSZdTh/KaR1qUULatsYs=
+			dmYa2uAQ0rjbVFlDslgxWZmnc5Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			AgzRA6s6SekTKcpbW5xH2oxzTgjCB2kqCs4N+ZqNJi0=
+			vHAMfmIoGKzsKz5iJ6vk6VaW7ZT91KwjXROIYEqOIlk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/DRINKS.db</key>
@@ -1889,11 +1889,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Cdm9kmY/HOOII5j54KI0ilSvT7M=
+			JoVv0Ss6t2khD8S/pDaW1QtPaws=
 			</data>
 			<key>hash2</key>
 			<data>
-			jk9C5K5X+BH8J6aFfcSF7ltryTubenLqI/w2mBv7ogY=
+			afDv/QBfKDX0SniPN41mcEIv/ok/02nxuTUCnz9AsSU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
