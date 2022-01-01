@@ -1,23 +1,10 @@
-import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:kinshasa/shared/exports.dart';
 
+class MorePage extends StatelessWidget {
+  MorePage({Key key}) : super(key: key);
 
-class MorePage extends StatefulWidget {
-  @override
-  _MorePageState createState() => _MorePageState();
-}
-
-class _MorePageState extends State<MorePage> {
-  static FavoritesBloc _favoritesBloc;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _favoritesBloc = Provider.of<FavoritesBloc>(context);
-  }
+  final FavoritesController favoritesController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -76,47 +63,6 @@ class _MorePageState extends State<MorePage> {
               title: Text('Help and Feedback'),
               leading: Icon(LineAwesomeIcons.send_o),
               onTap: send),
-          Padding(
-            padding: const EdgeInsets.only(left: 70.0),
-            child: Divider(),
-          ),
-
-          // Confirm before delete
-          FutureBuilder(
-            future: SharedPreferencesHelper.getDeleteConfirmationPreference(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                return ListTile(
-                  title: Text('Confirm before deleting'),
-                  leading: Icon(CupertinoIcons.delete),
-                  trailing: Switch(
-                    value: snapshot.data,
-                    onChanged: (value) {
-                      _favoritesBloc.setDeletePreference(value);
-                      SharedPreferencesHelper.setConfirmDelete(value);
-                    },
-                  ),
-                );
-              }
-              return ListTile();
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 70.0),
-            child: Divider(),
-          ),
-
-          // Exit
-          ListTile(
-            title: Text('Exit'),
-            leading: Icon(Icons.exit_to_app),
-            onTap: () {
-              SystemNavigator.pop();
-              Future.delayed(const Duration(milliseconds: 500), () {
-                exit(0);
-              });
-            },
-          ),
           Padding(
             padding: const EdgeInsets.only(left: 70.0),
             child: Divider(),

@@ -11,7 +11,6 @@ class _AppState extends State<App> {
   List<Drink> juiceData = [];
   List<Drink> smoothieData = [];
   List<Drink> shakeData = [];
-  List<Drink> favoriteDrinkData = [];
 
   @override
   void initState() {
@@ -46,21 +45,15 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => FavoritesBloc(favorites: favoriteDrinkData),
-        ),
-      ],
-      child: MyInheritedWidget(
-        juiceList: juiceData,
-        shakeList: shakeData,
-        smoothieList: smoothieData,
-        child: GetMaterialApp(
-          home: BottomTab(),
-          theme: theme(context),
-          debugShowCheckedModeBanner: false,
-        ),
+    Get.put(FavoritesController());
+    return MyInheritedWidget(
+      juiceList: juiceData,
+      shakeList: shakeData,
+      smoothieList: smoothieData,
+      child: GetMaterialApp(
+        home: BottomTab(),
+        theme: theme(context),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

@@ -1,8 +1,5 @@
 // pub
 export 'package:get/get.dart';
-export 'package:provider/provider.dart';
-export 'package:flutter_emoji/flutter_emoji.dart';
-export 'package:flutter_beautiful_popup/main.dart';
 export 'package:flutter_bounce/flutter_bounce.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:line_awesome_icons/line_awesome_icons.dart';
@@ -27,9 +24,11 @@ export 'package:kinshasa/screens/favorites.dart';
 export 'package:kinshasa/widgets/Constants.dart';
 export 'package:kinshasa/widgets/DBHelper1.dart';
 export 'package:kinshasa/widgets/bottom_tab.dart';
-export 'package:kinshasa/screens/drink_detail.dart';
 export 'package:kinshasa/widgets/FrostedAppBar.dart';
 export 'package:kinshasa/widgets/InheritedWidget.dart';
 export 'package:kinshasa/widgets/BouncyPageRoute.dart';
-export 'package:kinshasa/widgets/FavoritesProvider.dart';
+export 'package:kinshasa/controllers/favorites_controller.dart';
 export 'package:kinshasa/widgets/SharedPreferencesHelper.dart';
+export 'package:kinshasa/screens/drink_detail/drink_detail.dart';
+export 'package:kinshasa/screens/drink_detail/widgets/detail_section.dart';
+export 'package:kinshasa/screens/drink_detail/widgets/add_to_favorites_button.dart';
