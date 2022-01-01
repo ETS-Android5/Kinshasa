@@ -2,6 +2,8 @@
 
 A drink recipe app. This is a simple recipe app that provides some cool recipes for preparing juices, smoothies, and shakes in a very friendly and cool user interface. It tells a user the ingredients needed to prepare a particular drink, the steps to follow, and some useful nutritional values.
 
+## Screenshots
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
