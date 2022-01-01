@@ -21,8 +21,6 @@ dependencies:
 
   # f
   flutter_bounce: ^1.1.0
-  flutter_emoji: ^2.2.1+1
-  flutter_beautiful_popup: ^1.7.0
   flutter_email_sender: ^5.0.2
 
   # g
@@ -37,7 +35,6 @@ dependencies:
   # p
   path: ^1.8.0
   path_provider: ^2.0.8
-  provider: ^6.0.2
 
   # s
   sqflite: ^2.0.1
