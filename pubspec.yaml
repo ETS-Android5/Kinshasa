@@ -1,7 +1,7 @@
 name: kinshasa
-description: A drink recipe app 
+description: A drink recipe app
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -11,29 +11,43 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  carousel_slider: ^4.0.0
-  path: ^1.8.0
-  sqflite: ^2.0.1
-  flutter_beautiful_popup: ^1.7.0
-  intl: ^0.17.0
-  flutter_emoji: ^2.2.1+1
-  path_provider: ^2.0.8
-  flutter_email_sender: ^5.0.2
-  line_awesome_icons: ^1.0.4+2
-  draggable_scrollbar: ^0.1.0
-  flutter_bounce: ^1.1.0
-  provider: ^6.0.2
-  shared_preferences: ^2.0.11
 
+  # c
   cupertino_icons: ^1.0.4
+  carousel_slider: ^4.0.0
+
+  # d
+  draggable_scrollbar: ^0.1.0
+
+  # f
+  flutter_bounce: ^1.1.0
+  flutter_emoji: ^2.2.1+1
+  flutter_beautiful_popup: ^1.7.0
+  flutter_email_sender: ^5.0.2
+
+  # g
+  get: ^4.6.1
+
+  # i
+  intl: ^0.17.0
+
+  # l
+  line_awesome_icons: ^1.0.4+2
+
+  # p
+  path: ^1.8.0
+  path_provider: ^2.0.8
+  provider: ^6.0.2
+
+  # s
+  sqflite: ^2.0.1
+  shared_preferences: ^2.0.11
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 flutter:
-
   uses-material-design: true
   assets:
     - assets/DRINKS.db
@@ -45,7 +59,6 @@ flutter:
     - family: Product Sans
       fonts:
         - asset: assets/fonts/Product Sans Regular.ttf
-
 
   # To add assets to your application, add an assets section, like this:
   # assets:
