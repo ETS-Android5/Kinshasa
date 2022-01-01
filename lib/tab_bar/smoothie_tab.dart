@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kinshasa/widgets/DrinkModel.dart';
+import 'package:kinshasa/models/drink.dart';
 import 'package:kinshasa/widgets/InheritedWidget.dart';
 import 'package:kinshasa/widgets/tab.dart';
 
@@ -10,9 +10,9 @@ class SmoothieTabContents extends StatefulWidget {
 
 class _SmoothieTabContentsState extends State<SmoothieTabContents> {
   var provider;
-  List<Drink> selectedDrinks;
   List<Drink> set1;
   List<Drink> set2;
+  List<Drink> selectedDrinks;
 
   @override
   void didChangeDependencies() {
@@ -33,11 +33,9 @@ class _SmoothieTabContentsState extends State<SmoothieTabContents> {
   }
 
   @override
-  // ignore: must_call_super
   Widget build(BuildContext context) {
     return BuildTab(
       title: 'smoothie',
-      drinkCount: provider.smoothieCount,
       set1: set1,
       set2: set2,
       selectedDrinks: selectedDrinks,
