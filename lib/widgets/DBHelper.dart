@@ -72,29 +72,4 @@ class DatabaseHelper {
     var result = await db.query(shakeTable);
     return result.toList();
   }
-
-  // ==========================================================================
-  // Get the number of items in each table for display in the app bar in the
-  // all screen
-
-  // Raw query to get the number of objects in the juice table
-  Future<int> getJuiceCount() async {
-    var dbClient = await instance.database;
-    return Sqflite.firstIntValue(
-        await dbClient.rawQuery('SELECT COUNT(*) FROM $juiceTable'));
-  }
-
-  // Raw query to get the number of objects in the smoothie table
-  Future<int> getSmoothieCount() async {
-    var dbClient = await instance.database;
-    return Sqflite.firstIntValue(
-        await dbClient.rawQuery('SELECT COUNT(*) FROM $smoothieTable'));
-  }
-
-  // Raw query to get the number of objects in the shake table
-  Future<int> getShakeCount() async {
-    var dbClient = await instance.database;
-    return Sqflite.firstIntValue(
-        await dbClient.rawQuery('SELECT COUNT(*) FROM $shakeTable'));
-  }
 }
