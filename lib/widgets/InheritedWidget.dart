@@ -3,16 +3,14 @@
  */
 
 import 'package:flutter/widgets.dart';
-import 'DrinkModel.dart';
+import '../models/drink.dart';
 
 class MyInheritedWidget extends InheritedWidget {
   final List<Drink> juiceList;
   final List<Drink> smoothieList;
   final List<Drink> shakeList;
   final List<Drink> favoriteDrinks;
-  final int juiceCount;
-  final int smoothieCount;
-  final int shakeCount;
+
   MyInheritedWidget({
     Key key,
     Widget child,
@@ -20,9 +18,6 @@ class MyInheritedWidget extends InheritedWidget {
     this.smoothieList,
     this.shakeList,
     this.favoriteDrinks,
-    this.juiceCount,
-    this.smoothieCount,
-    this.shakeCount,
   }) : super(key: key, child: child);
 
   static MyInheritedWidget of(BuildContext context) {
@@ -30,7 +25,5 @@ class MyInheritedWidget extends InheritedWidget {
   }
 
   @override
-  bool updateShouldNotify(MyInheritedWidget oldWidget) {
-    return true;
-  }
+  bool updateShouldNotify(MyInheritedWidget oldWidget) => true;
 }
