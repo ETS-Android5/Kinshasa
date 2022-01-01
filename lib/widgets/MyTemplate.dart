@@ -18,9 +18,7 @@ class MyTemplate extends BeautifulPopupTemplate {
   @override
   get layout {
     return [
-      Positioned(
-        child: background,
-      ),
+      Positioned(child: background),
       Positioned(
         top: percentH(40),
         height: percentH(actions == null ? 42 : 42),
@@ -34,8 +32,6 @@ class MyTemplate extends BeautifulPopupTemplate {
         right: percentW(10),
         child: actions ?? Container(),
       ),
-
-
     ];
   }
 }

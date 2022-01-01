@@ -13,7 +13,7 @@ class SharedPreferencesHelper {
 
 // Method that gets user decision whether to confirm before deleting an item in
 // favorites
-  static Future<bool> getConfirmDelete() async {
+  static Future<bool> getDeleteConfirmationPreference() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getBool(confirmDeleteKey) ?? true;
   }

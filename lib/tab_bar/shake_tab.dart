@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kinshasa/widgets/DrinkModel.dart';
+import 'package:kinshasa/models/drink.dart';
 import 'package:kinshasa/widgets/InheritedWidget.dart';
 import 'package:kinshasa/widgets/tab.dart';
 
@@ -32,11 +32,9 @@ class _ShakeTabContentsState extends State<ShakeTabContents> {
   }
 
   @override
-  // ignore: must_call_super
   Widget build(BuildContext context) {
     return BuildTab(
       title: 'shake',
-      drinkCount: provider.shakeCount,
       set1: set1,
       set2: set2,
       selectedDrinks: selectedDrinks,

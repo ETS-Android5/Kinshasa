@@ -19,14 +19,15 @@ class FrostedAppBar extends StatefulWidget {
   double blurStrengthX;
   double blurStrengthY;
 
-  FrostedAppBar(
-      {this.height,
-      this.title,
-      this.leading,
-      this.actions,
-      this.blurStrengthX,
-      this.blurStrengthY,
-      this.color});
+  FrostedAppBar({
+    this.height,
+    this.title,
+    this.leading,
+    this.actions,
+    this.blurStrengthX,
+    this.blurStrengthY,
+    this.color,
+  });
 }
 
 class _FrostedAppBarState extends State<FrostedAppBar> {
