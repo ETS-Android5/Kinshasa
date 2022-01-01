@@ -3,7 +3,7 @@
 A drink recipe app. This is a simple recipe app that provides some cool recipes for preparing juices, smoothies, and shakes in a very friendly and cool user interface. It tells a user the ingredients needed to prepare a particular drink, the steps to follow, and some useful nutritional values.
 
 ## Screenshots
-![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 31 02](https://user-images.githubusercontent.com/53237532/147856461-70b74672-1ca2-40c5-987f-0e6aad9ef651.png)    ![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 28 24](https://user-images.githubusercontent.com/53237532/147856466-e909302e-be55-41cc-b88a-77713a8684fb.png)    ![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 27 48](https://user-images.githubusercontent.com/53237532/147856468-81320439-4dd9-4544-9e47-31eb3248a6c0.png)    ![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 27 39](https://user-images.githubusercontent.com/53237532/147856471-c63aa446-6ca0-415c-8291-f532f040a6b2.png)
+![Simulator Screen Shot - iPhone 11 - 2022-01-01 at 17 31 02](https://user-images.githubusercontent.com/53237532/147856572-20c86c9a-9e3d-472b-bc4b-0c547b988dd0.png)
 
 ## Getting Started
 
