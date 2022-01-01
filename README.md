@@ -3,6 +3,12 @@
 A drink recipe app. This is a simple recipe app that provides some cool recipes for preparing juices, smoothies, and shakes in a very friendly and cool user interface. It tells a user the ingredients needed to prepare a particular drink, the steps to follow, and some useful nutritional values.
 
 ## Screenshots
+<img width="309" alt="Screenshot 2022-01-01 at 17 18 19" src="https://user-images.githubusercontent.com/53237532/147856196-e55e8ed6-59cb-426f-b50a-5c838502a46b.png">
+
+<img width="304" alt="Screenshot 2022-01-01 at 17 17 21" src="https://user-images.githubusercontent.com/53237532/147856202-8adf6f98-3603-4d97-b4f0-997a7827fb0b.png">
+
+<img width="311" alt="Screenshot 2022-01-01 at 17 15 25" src="https://user-images.githubusercontent.com/53237532/147856204-2752c69a-5bca-4d45-99b0-7027a522307f.png">
+
 
 ## Getting Started
 
