@@ -8,7 +8,7 @@ ThemeData theme(BuildContext context) {
     appBarTheme: AppBarTheme(
       elevation: 0.0,
       centerTitle: true,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     ),
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: Colors.white,
