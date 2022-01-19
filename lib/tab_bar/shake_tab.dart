@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kinshasa/models/drink.dart';
-import 'package:kinshasa/widgets/InheritedWidget.dart';
+import 'package:kinshasa/widgets/inherited_widget.dart';
 import 'package:kinshasa/widgets/tab.dart';
 
 class ShakeTabContents extends StatefulWidget {
