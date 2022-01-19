@@ -13,6 +13,8 @@ export 'dart:math';
 // local
 export 'package:kinshasa/app.dart';
 export 'package:kinshasa/widgets/tab.dart';
+export 'package:kinshasa/widgets/tab.dart';
+export 'package:kinshasa/models/drink.dart';
 export 'package:kinshasa/shared/theme.dart';
 export 'package:kinshasa/shared/utils.dart';
 export 'package:kinshasa/models/drink.dart';
@@ -25,6 +27,7 @@ export 'package:kinshasa/widgets/constants.dart';
 export 'package:kinshasa/widgets/db_helper1.dart';
 export 'package:kinshasa/widgets/bottom_tab.dart';
 export 'package:kinshasa/widgets/frosted_appbar.dart';
+export 'package:kinshasa/widgets/inherited_widget.dart';
 export 'package:kinshasa/widgets/inherited_widget.dart';
 export 'package:kinshasa/widgets/bouncy_page_route.dart';
 export 'package:kinshasa/controllers/favorites_controller.dart';
