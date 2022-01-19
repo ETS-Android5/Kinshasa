@@ -16,8 +16,7 @@ class MorePage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: <Widget>[
-          // About
+        children: [
           ListTile(
             title: Text('About'),
             leading: Icon(LineAwesomeIcons.info),
@@ -35,8 +34,6 @@ class MorePage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 70.0),
             child: Divider(),
           ),
-
-          // Rate the app
           ListTile(
             leading: Icon(LineAwesomeIcons.star_o),
             title: Text('Rate the app'),
@@ -46,8 +43,6 @@ class MorePage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 70.0),
             child: Divider(),
           ),
-
-          // Share the app
           ListTile(
             leading: Icon(LineAwesomeIcons.share_alt_square),
             title: Text('Share the app'),
@@ -57,8 +52,6 @@ class MorePage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 70.0),
             child: Divider(),
           ),
-
-          // Help and feedback
           ListTile(
               title: Text('Help and Feedback'),
               leading: Icon(LineAwesomeIcons.send_o),
