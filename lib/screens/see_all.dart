@@ -25,6 +25,7 @@ class _AllState extends State<All> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Stack(
           children: <Widget>[
             Padding(
